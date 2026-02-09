@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Photorealistic 3D Tiles with CesiumJS</title>
+    <!-- Import CesiumJS -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cesiumContainer"></div>
+
+    <!-- Economy Tab UI -->
+    <div id="economy-ui" style="display: none;">
+        <div class="economy-panel">
+            <div class="economy-header">
+                <h2>Economy Overview</h2>
+                <button id="close-economy-btn">X</button>
+            </div>
+            <div class="economy-controls">
+                <label for="market-select">Select Market:</label>
+                <select id="market-select">
+                    <!-- Options will be populated by JS -->
+                </select>
+            </div>
+            <div class="charts-container">
+                <div class="chart-wrapper">
+                    <canvas id="priceChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="volumeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="toggle-economy-btn">Economy</button>
+
+    <!-- Main Logic -->
+    <script type="module" src="app.js"></script>
+    <script type="module" src="economy_mod.js"></script>
+</body>
+</html>
